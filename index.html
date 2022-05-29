@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hotel</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+	<!-- owlCarouse CND -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- owlCarouse CND -->
+	<!-- jQueryCND -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<!-- jQueryCND -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="head">
+		<div class="container flex1">
+			<div class="scoial">
+				<i class="fab fa-facebook"></i>
+				<i class="fab fa-instagram"></i>
+				<i class="fab fa-youtube"></i>
+				<i class="fab fa-twitter"></i>
+			</div>
+			<div class="logo">
+				<img src="images/logo.png" alt="logo">
+			</div>
+			<div class="address">
+				<i class="fas fa-map-marker-alt"></i>
+				<span>Số 15, lô 6, quận Hoàng Mai, Hà Nội</span>
+			</div>
+		</div>
+	</div>
+	<header class="header">
+		<div class="container">
+			<div class="navbar flex1">
+				<div class="sticky_logo logo">
+					<img src="images/logo.png" alt="logo">
+				</div>
+				<ul class="nav-menu">
+				<li>
+					<a href="#home">Home</a>
+				</li>
+				<li>
+					<a href="#about">About</a>
+				</li>
+				<li>
+					<a href="#room">Room</a>					
+				</li>
+				<li>
+					<a href="#services">Services</a>
+				</li>
+				<li>
+					<a href="#shop">Shop</a>					
+				</li>
+				<li>
+					<a href="#feedback">Feedback</a>
+				</li>
+				<li>					
+					<a href="#gallery">Gallery</a>
+				</li>
+				<li>
+					<a href="#blog">Blog</a>
+				</li>
+				<li>
+					<a href="#contact">Contact</a>
+				</li>
+				</ul>
+				<div class="hamburger">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</div>
+				<div class="head_contact">
+					<i class="fas fa-phone-volume"></i>
+				</div>
+			</div>
+		</div>
+	</header>
+	<script type="text/javascript">
+		const hamburger = document.querySelector('.hamburger');
+		const navMenu = document.querySelector('.nav-menu');
+
+		hamburger.addEventListener('click',mobilemenu);
+
+		function mobilemenu(){
+			hamburger.classList.toggle('active');
+			navMenu.classList.toggle('active');
+		}
+
+		window.addEventListener('scroll', function() {
+			var header = document.querySelector('.header');
+			header.classList.toggle('sticky',window.scrollY>0)
+		});
+	</script>
+	<div class="home" id="home">
+		<div class="container">
+			<h1>Make Memories</h1>
+			<p>Discover the place where you have fun & enjoy a lot</p>
+			<form action="">
+				<div class="content grid">
+					<div class="box">
+						<span>ARRIVAL DATE</span>
+						<input type="date" placeholder="28/05/2022"/>
+					</div>
+					<div class="box">
+						<span>DEPARTURE DATE</span>
+						<input type="date" placeholder="29/05/2022"/>
+					</div>
+		            <div class="box">
+							<span>ADULTS</span>
+							<input type="number" placeholder="1"/>
+					</div>
+					<div class="box">
+							<span>CHILDS</span>
+							<input type="number" placeholder="0"/>
+					</div>
+					<div class="box">
+					<button type="button" class="flex">
+							<span>Check available</span>
+							<i class="fas fa-arrow-circle-right"></i>
+					</button>
+					</div>	
+				</div>
+				
+			</form>
+		</div>
+	</div>
+
+	<section class="about" id="about">
+		<div class="container">
+			<div class="heading">
+				<h5>EXPLORE</h5>
+				<h2>We are cool to give you pleasesure</h2>
+			</div>
+			<div class="content flex top">
+			<div class="left">
+				<h3>As much as comfort want to get from us everything	
+				</h3>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+				t wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+				<p>At vero eos et accusam et justo duo dolores et ea rebum 
+				Ut wisi enim ad minim veniam.
+				Quis nostrud exerci tation ullamcorper. 
+				Suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+				</p>
+			<div class="box">
+				<button type="button" class="flex">
+					<span>Check available</span>
+					<i class="fas fa-arrow-circle-right"></i>
+				</button>
+			</div>
+			</div>
+			<div class="right">
+				<img src="images/c.png" alt="c">
+			</div>
+		</div>
+		</div>
+	</section>
+	<section class="wrapper">
+		<div class="container">
+			<div class="owl-carousel owl-theme">
+			    <div class="item">
+			    	<div class="heading">
+			    		<h5>the city view</h5>
+			    		<h3>A charming view of city </h3>
+			    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+						t wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+						<p>At vero eos et accusam et justo duo dolores et ea rebum 
+						Ut wisi enim ad minim veniam.
+						Quis nostrud exerci tation ullamcorper. 
+						Suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+						</p>
+			    	</div>
+			    </div>
+			    <div class="item">
+			    	<div class="heading">
+			    		<h5>the city view</h5>
+			    		<h3>A charming view of city </h3>
+			    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+						t wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+						<p>At vero eos et accusam et justo duo dolores et ea rebum 
+						Ut wisi enim ad minim veniam.
+						Quis nostrud exerci tation ullamcorper. 
+						Suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+						</p>
+			    	</div>
+			    </div>
+			    <div class="item">
+			    	<div class="heading">
+			    		<h5>the city view</h5>
+			    		<h3>A charming view of city </h3>
+			    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+						t wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+						<p>At vero eos et accusam et justo duo dolores et ea rebum 
+						Ut wisi enim ad minim veniam.
+						Quis nostrud exerci tation ullamcorper. 
+						Suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+						</p>
+			    	</div>
+			    </div>
+			    <div class="item">
+			    	<div class="heading">
+			    		<h5>the city view</h5>
+			    		<h3>A charming view of city </h3>
+			    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+						t wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+						<p>At vero eos et accusam et justo duo dolores et ea rebum 
+						Ut wisi enim ad minim veniam.
+						Quis nostrud exerci tation ullamcorper. 
+						Suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+						</p>
+			    	</div>
+			    </div>
+			</div>
+		</div>
+	</section>
+	
+
+
+
+	<section class="wrapper2">
+		<div class="container">
+			<div class="heading mtop">
+            	<h5>facilities</h5>
+            	<h2>Giving entirely awesome</h2> 
+			</div>
+		</div>
+		<div class="content grid mtop">
+			<div class="box">
+				<i class="fas fa-shipping-fast"></i>
+				<h3>Pick Up & Drop</h3>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+				</p>
+			</div>
+			<div class="box">
+				<i class="fas fa-mug-hot"></i>
+				<h3>Pick Up & Drop</h3>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+				</p>
+			</div>
+			<div class="box">
+				<i class="fas fa-car"></i>
+				<h3>Pick Up & Drop</h3>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+				</p>
+			</div>
+			<div class="box">
+				<i class="fas fa-water"></i>
+				<h3>Pick Up & Drop</h3>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="offer mtop" id="room">
+		<div class="container">
+			<div class="heading">
+				<h5>exclusive offer</h5>
+				<h3>You can get an exclusive offer</h3>
+			</div>
+			<div class="content grid2 mtop">
+				<div class="box flex">
+					<div class="left">
+						<img src="images/c.png" alt="room">
+					</div>
+					<div class="right">
+						<h4>Deluxe Room</h4>
+						<div class="rate flex">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+						<p>It wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</p>
+						<h5>99.9$ per night</h5>						
+						<button type="button" class="flex">
+								<span>Check available</span>
+								<i class="fas fa-arrow-circle-right"></i>
+						</button>					
+					</div>
+				</div>
+				<div class="box flex">
+					<div class="left">
+						<img src="images/c.png" alt="room">
+					</div>
+					<div class="right">
+						<h4>Deluxe Room</h4>
+						<div class="rate flex">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+						<p>It wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</p>
+						<h5>99.9$ per night</h5>
+						<button type="button" class="flex">
+								<span>Check available</span>
+								<i class="fas fa-arrow-circle-right"></i>
+						</button>
+					</div>
+				</div>
+				<div class="box flex">
+					<div class="left">
+						<img src="images/c.png" alt="room">
+					</div>
+					<div class="right">
+						<h4>Deluxe Room</h4>
+						<div class="rate flex">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+						<p>It wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</p>
+						<h5>99.9$ per night</h5>
+						<button type="button" class="flex">
+								<span>Check available</span>
+								<i class="fas fa-arrow-circle-right"></i>
+						</button>
+						
+					</div>
+				</div>
+				<div class="box flex">
+					<div class="left">
+						<img src="images/c.png" alt="room">
+					</div>
+					<div class="right">
+						<h4>Deluxe Room</h4>
+						<div class="rate flex">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+						<p>It wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</p>
+						<h5>99.9$ per night</h5>
+						<button type="button" class="flex">
+							<span>Check available</span>
+							<i class="fas fa-arrow-circle-right"></i>
+						</button>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="area top">
+		<div class="container">
+			<div class="heading">
+				<h5>around hotel</h5>
+				<h3>The are we cover under Hotel</h3>
+			</div>
+			<div class="content grid mtop">
+				<div class="box">
+					<h3>Restaurant</h3>
+					<p>
+						A restaurant<span>100m</span>
+					</p>
+					<p>
+						B restaurant<span>100m</span>
+					</p>
+					<p>
+						C restaurant<span>100m</span>
+					<p>
+				</div>
+				<div class="box">
+					<h3>Restaurant</h3>
+					<p>
+						A restaurant<span>100m</span>
+					</p>
+					<p>
+						B restaurant<span>100m</span>
+					</p>
+					<p>
+						C restaurant<span>100m</span>
+					<p>
+				</div>
+				<div class="box">
+					<h3>Restaurant</h3>
+					<p>
+						A restaurant<span>100m</span>
+					</p>
+					<p>
+						B restaurant<span>100m</span>
+					</p>
+					<p>
+						C restaurant<span>100m</span>
+					<p>
+				</div>
+				<div class="box">
+					<h3>Restaurant</h3>
+					<p>
+						A restaurant<span>100m</span>
+					</p>
+					<p>
+						B restaurant<span>100m</span>
+					</p>
+					<p>
+						C restaurant<span>100m</span>
+					<p>
+				</div>
+				<div class="box">
+					<h3>Restaurant</h3>
+					<p>
+						A restaurant<span>100m</span>
+					</p>
+					<p>
+						B restaurant<span>100m</span>
+					</p>
+					<p>
+						C restaurant<span>100m</span>
+					<p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="customer top" id="feedback">
+		<div class="container">
+			<div class="heading">
+				<h5>feedback</h5>
+				<h3>What customers say</h3>
+			</div>
+			<div class="owl-carousel owl-theme mtop">
+			    <div class="item">
+			    		<div class="rate">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+			    		</div>
+			    		<h3>The location is very convenient, not afraid of getting lost</h3>
+			    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+			    		<div class="user flex">
+				    		<div class="img">
+				    			<img src="images/p2.png" alt="p2">
+				    		</div>
+				    		<div class="text">Nonoroa Zoro</div>
+			    		</div>
+			    </div>
+			    <div class="item">
+			    		
+			    			<div class="rate">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+			    		</div>
+			    		<h3>The location is very convenient, not afraid of getting lost</h3>
+			    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+			    		
+			    		<div class="user flex">
+				    		<div class="img">
+				    			<img src="images/p2.png" alt="p2">
+				    		</div>
+				    		<div class="text">Nonoroa Zoro
+				    			span
+				    		</div>
+			    		</div>
+			    </div>
+			    <div class="item">
+			    		<div class="rate">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+			    		</div>
+			    		<h3>The location is very convenient, not afraid of getting lost</h3>
+			    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+			    		<div class="user flex">
+				    		<div class="img">
+				    			<img src="images/p2.png" alt="p2">
+				    		</div>
+				    		<div class="text">Nonoroa Zoro</div>
+			    		</div>
+			    </div>
+			 	<div class="item">
+			    		<div class="rate">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+			    		</div>
+			    		<h3>The location is very convenient, not afraid of getting lost</h3>
+			    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+			    		<div class="user flex">
+				    		<div class="img">
+				    			<img src="images/p2.png" alt="p2">
+				    		</div>
+				    		<div class="text">Nonoroa Zoro</div>
+			    		</div>
+			    </div>			    	
+			</div>	
+		</div>
+	</section>
+	<!-- js slider CND -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- js slider CND -->
+	<script type="text/javascript">
+		$('.owl-carousel').owlCarousel({
+		    loop:true,
+		    margin:10,
+		    nav:true,
+		    dots:false,
+		    navText:['<i class="fas fa-arrow-left"></i>','<i class="fas fa-arrow-right"></i>'],
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        786:{
+		            items:1
+		        },
+		        1000:{
+		            items:1
+		        }
+		    }
+		})
+	</script>
+
+	<section class="gallery top" id="gallery">
+		<div class="owl-carousel owl-theme">
+			<div class="item">
+				<img src="images/c.png" alt="">
+			</div>
+			<div class="item">
+				<img src="images/a.png" alt="">
+			</div>
+			<div class="item">
+				<img src="images/c2.png" alt="">
+			</div>
+			<div class="item">
+				<img src="images/c3.png" alt="">
+			</div>
+			<div class="item">
+				<img src="images/c4.png" alt="">
+			</div>
+			<div class="item">
+				<img src="images/c5.png" alt="">
+			</div>
+			<div class="item">
+				<img src="images/c6.png" alt="">
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		$('.owl-carousel').owlCarousel({
+		    loop:true,
+		    margin:0,
+		    nav:false,
+		    dots:false,
+		    autoplay:true,
+		    sliderTransition:'linear',
+		    autoplayTimeout:4000,
+		    autoplaySpeed:4000,
+		    autoplayHoverPause:true,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        786:{
+		            items:3
+		        },
+		        1000:{
+		            items:5
+		        }
+		    }
+		})
+	</script>
+	<section class="map top">
+			<div class="heading">
+				<h5>View in map</h5>
+			</div>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29792.263470362068!2d105.49899578643016!3d21.031368200000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345b5bd481cfa9%3A0x9bfec1119e304a90!2sV%C3%A2n%20S%C6%A1n%20Garden%20Hotel!5e0!3m2!1sen!2s!4v1653812863017!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</section>
+	<footer>
+		<div class="container top">
+			<div class="subcribe" id="contact">
+				<h2>Suncribe newsletter</h2>
+				<p>It wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
