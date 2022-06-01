@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Đăng nhập</title>
+	<link rel="stylesheet" type="text/css" href="css/login-style.css">
+</head>
+<body>
+<div class="login-box">
+	<h2>Đăng nhập</h3>
+	<form action="">
+		<div class="box">
+			<input type="" name="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{3,31}$" title="Tài khoản dài 4-31 ký tự gồm số và chữ" id="username" required>
+			<label for="username">Tài khoản</label>
+		</div>
+		<div class="box">
+			<input 
+			pattern="^[a-zA-Z][a-zA-Z0-9\.]{7,31}$" title="Mật khẩu dài 8-31 ký tự gồm số và chữ" type="password" name="" required  id="password">
+			<label for="password">Mật khẩu</label>
+			<span class="eye-slash hidden">&#128065;<span class="slash">/</span></span>
+			<span class="eye ">&#128065;</span>
+		</div>
+		<div class="link-box"><a href="#">Quên mật khẩu.</a></div>
+		<button>Đăng nhập</button>
+		<h5 class="link-box">Chưa có tài khoản? <a href="#">Đăng ký ngay</a></h5>
+	</form>
+</div>
+<div class="error-message">
+	<div class="close-error-message">&#128473;</div>
+	Mật khẩu sai
+</div>
+<script type="text/javascript">
+	const error_message = document.querySelector('.error-message');
+	const close_error =document.querySelector('.close-error-message')
+	close_error.addEventListener('click',()=>{
+		error_message.classList.toggle('hidden');
+	});
+
+	const eye = document.querySelector('.eye');
+	const eye_slash = document.querySelector('.eye-slash');
+	eye.addEventListener('click',()=>{
+		document.querySelector('.eye').classList.toggle('hidden');
+		document.querySelector('.eye-slash').classList.toggle('hidden');
+		document.querySelector('#password').setAttribute('type','text');
+	});
+	eye_slash.addEventListener('click',()=>{
+		document.querySelector('.eye').classList.toggle('hidden');
+		document.querySelector('.eye-slash').classList.toggle('hidden');
+		document.querySelector('#password').setAttribute('type','password');
+	});
+</script>
+
+</body>
+</html>
