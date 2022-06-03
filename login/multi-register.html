@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Đăng ký tài khoản</title>
+	<link rel="stylesheet" href="css/register-style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+	<h2>Đăng ký</h2>
+	<form action="">
+		<div class="progess-bar">
+			<span class="step form4">4</span>
+			<span class="step form3">3</span>
+			<span class="step form2">2</span>
+			<div class="progess"></div>
+			<span class="step form1 instep">1</span>
+		</div>
+		<div class="register-box">
+			<div class="box tocenter" id="form1">
+				<div class="header">
+					Tài khoản mới
+				</div>
+				<div class="input-box">
+					<div class="lable">Email<span class="note">*</span></div>
+					<input type="email" name="username" title="Tài khoản chứa từ 4 - 31 ký tự số và ít nhất 1 chữ" 
+					pattern=".*@gmail\.com" size="30"
+					required>
+				</div>
+				<div class="input-box">
+					<div class="lable">Mật khẩu<span class="note">*</span>     <small>(4-31 ký tự chữ và số)</small></div>
+					<input type="password" name="password" id="pass" required>
+				</div>
+				<div class="input-box">
+					<div class="lable">Xác nhận mật khẩu<span class="note">*</span></div>
+					<input type="password" id="comfirmpass" required>
+				</div>
+				<div class="nav nav1"><div class="btn" onclick="next1()">Tiếp</div></div>		
+			</div>
+			<div class="box toright" id="form2">
+				<div class="header">
+					Thông tin cá nhân
+				</div>
+				<div class="input-box">
+					<div class="lable">Họ và tên<span class="note">*</span></div>
+					<input type="text" name="first_name" required>
+				</div>
+				<div class="input-box">
+					<div class="lable">Số điện thoại<span class="note"></span></div>
+					<input type="number" name="phone_number">
+				</div>
+				
+				<div class="nav nav2"><div class="btn" onclick="back1()">Quay lại</div><div class="btn" onclick="next2()">Tiếp</div></div>		
+			</div>
+			<div class="box toright" id="form3">
+				<div class="header">
+					Thông tin cơ bản
+				</div>
+				<div class="input-box">
+					<div class="lable">Giới tính<span class="note"></span></div>
+					<select name="gender" id="">
+						<option value="0">Giới tính của bạn là ?</option>
+						<option value="1">Nam</option>
+						<option value="2">Nữ</option>
+						<option value="3">Không xác định</option>
+					</select>
+				</div>
+				<div class="input-box">
+					<div class="lable">Ngày sinh</div>
+					<input type="date" name="dob">
+				</div>
+				<div class="input-box">
+					<div class="lable">Địa chỉ<span class="note"></span></div>
+					<input type="text" >
+				</div>
+				<div class="input-box">
+					<div class="lable">Thành phố<span class="note">*</span></div>
+					<select name="gender" id="" required>
+						<option value="Hà Nội">Hà Nội</option>
+						<option value="Hà Nam">Hà Nam</option>
+						<option value="Hà Giang">Hà Giang</option>
+						<option value="Hoà Bình">Hoà Bình</option>
+					</select>
+				</div>
+				<div class="nav nav2">
+					<div class="btn" onclick="back2()">Quay lại</div>
+					<div class="btn" onclick="next3()">Tiếp</div></div>		
+			</div>
+			<div class="box toright" id="form4">
+				<div class="header">
+					Ảnh đại diện
+				</div>
+				<div class="image-box">
+					<img src="images/p4.png" class="avatar" alt="user">
+					<div class="change"><i class="fas fa-camera"></i></div>
+				</div>
+				<div class="input-box url-box hidden">
+					<div class="lable">Nhập link ảnh</div>
+					<input type="url" id="url-avatar">
+					<div class="mark">
+						<span class="v">&#10003;</span>
+						<span class="x">&#10006;</span>	
+					</div>	
+				</div>
+				<div class="nav nav2"><div class="btn" onclick="back3()">Quay lại</div>
+				<button>Tạo tài khoản</button></div>		
+			</div>	
+		</div>
+
+	</form>
+</div>
+<script type="text/javascript">
+	const camera = document.querySelector('.change');
+	const vmark = document.querySelector('.v');
+	const xmark = document.querySelector('.x');
+	const url_box = document.querySelector('.url-box');
+	const url_avatar = document.querySelector('#url-avatar');
+	const avatar = document.querySelector('.avatar');
+	const oldimage = avatar.getAttribute('src');
+
+	camera.addEventListener('click',()=>{
+		url_box.classList.toggle('hidden');
+	});
+
+	url_avatar.addEventListener('change',()=>{
+		avatar.setAttribute('src',url_avatar.value);
+	});
+
+	vmark.addEventListener('click',()=>{
+		avatar.setAttribute('src',url_avatar.value);
+		url_box.classList.toggle('hidden');
+	});
+
+	xmark.addEventListener('click',()=>{
+		avatar.setAttribute('src',oldimage);
+		url_box.classList.toggle('hidden');
+	});
+
+	const step1 = document.querySelector('.form1');
+	const step2 = document.querySelector('.form2');
+	const step3 = document.querySelector('.form3');
+	const step4 = document.querySelector('.form4');
+	const progess = document.querySelector('.progess');
+	const form1 = document.querySelector('#form1');
+	const form2 = document.querySelector('#form2');
+	const form3 = document.querySelector('#form3');
+	const form4 = document.querySelector('#form4');
+
+	console.log(form1.classList[1]);
+	function next1(){
+		let result = checkinput(form1);
+		if((result!=true)) {
+			alert(result); 
+			return false;
+		}
+		if(!comfirm_pass()){
+			alert('Comfirm password is incorrect!')
+			return false;
+		}
+		form1.classList.toggle('toleft');
+		form2.classList.toggle('toright');
+		form2.classList.toggle('tocenter');
+		step1.classList.toggle('instep');
+		step2.classList.toggle('instep');
+		progess.style.width='85px';
+	}
+
+	function next2(){
+		let result = checkinput(form2);
+		if((result!=true)) {
+			alert(result); 
+			return false;
+		}
+		form2.classList.toggle('toleft');
+		form3.classList.toggle('toright');
+		form3.classList.toggle('tocenter');
+		step2.classList.toggle('instep');
+		step3.classList.toggle('instep');
+		progess.style.width='170px';
+	}
+	function next3(){
+		form4.classList.toggle('toright');
+		form3.classList.toggle('tocenter');
+		form3.classList.toggle('toleft');
+		step3.classList.toggle('instep');
+		step4.classList.toggle('instep');
+		progess.style.width='255px';
+	}
+	function back1(){
+		form2.classList.toggle('toright');
+		form1.classList.toggle('toleft');
+		form1.classList.toggle('tocenter');
+		step2.classList.toggle('instep');
+		step1.classList.toggle('instep');
+		progess.style.width='0';
+	}
+	function back2(){
+		form3.classList.toggle('toright');
+		form2.classList.toggle('toleft');
+		form2.classList.toggle('tocenter');
+		step3.classList.toggle('instep');
+		step2.classList.toggle('instep');
+		progess.style.width='85px';
+	}
+	function back3(){
+		form4.classList.toggle('toright');
+		form3.classList.toggle('toleft');
+		form3.classList.toggle('tocenter');
+		step3.classList.toggle('instep');
+		step4.classList.toggle('instep');
+		progess.style.width='170px';
+	}
+	function checkinput(e){
+		let listInput = e.querySelectorAll('input');
+		for (let i = 0; i<listInput.length; i++) {
+			if(!listInput[i].required) return true;
+			else
+			if (listInput[i].value=='') { 
+				return 'Vul lòng điền hết các trường có dấu *';
+			}
+			else
+			if(!listInput[i].checkValidity()) {
+			listInput[i].setCustomValidity(listInput[i].getAttribute('title'));
+				return listInput[i].validationMessage;
+			}
+		}
+		return true;
+	}
+	function comfirm_pass(){
+		let pass = document.querySelector('#pass');
+		let comfirmpass= document.querySelector('#comfirmpass');
+		// get password and comfirmpassword to check synch.
+
+		if(pass.value == comfirmpass.value) return true;
+		else return false;
+	}
+</script>
+</body>
+</html>

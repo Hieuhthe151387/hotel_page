@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>select demo</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0
+			box-sizing: border-box;
+		}
+		/*.select{
+			position: relative;
+			overflow: hidden;
+		}
+		.select input:disabled{
+			color: #000;
+			background: #fff;
+			border: none;
+			outline: none;
+			border-bottom: 1px solid red;
+		}
+		.select span{
+			position: absolute;
+			display: inline-block;
+			overflow: visible;
+			transition: 0.5s;
+		}
+
+		.select span::before{
+			position: absolute;
+			content: '';
+			background: none;
+			width: 0px;
+			height: 0px;
+			border: 5px solid;
+			border-top-color: black;
+			border-bottom-color: transparent;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			top: -5px;
+			right: 5px;
+		}
+		input:hover~span::before{
+			border-top-color: transparent;
+			border-bottom-color: black ;
+			border-left-color: transparent;
+			border-right-color: transparent;
+		}
+		.selectoption{
+			width: 100%;
+			display: none;
+		}
+		.selectoption.active{
+			display: block;
+		}
+		input:hover~.selectoption,.selectoption:hover{
+			display: block;
+		}
+		.option:hover{
+			background: red;
+			color: white;
+		}*/
+
+		.select-box{
+			cursor: pointer;
+			position: relative;
+		}
+		.select-box input, 
+		input~.select{
+			width: 150px;
+			line-height: 25px;
+		}
+		input{
+			border: none;
+			outline: none;
+			border-bottom: 1px solid #f00;
+		}
+		input:disabled{
+			background: #fff;
+			color: #000;
+		}
+
+		.select{
+			position: absolute;
+			display: none;
+		}
+
+		.select-box span{
+			position: absolute;
+			display: inline-block;
+		/*	transition: 0.5s;*/
+			width: 0;
+			height: 0;
+			border: 5px solid;
+			border-top-color: black;
+			border-bottom-color: transparent;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			top: 12px;
+			left: 135px;
+		}
+		input:hover~span{
+			border-top-color: transparent;
+			border-bottom-color: black;
+
+			top: 8px;
+			border-left-color: transparent;
+			border-right-color: transparent;
+		}
+		input:hover~.select,.select:hover{
+			display: block;
+		}
+		.select:hover~span{
+			border-top-color: transparent;
+			border-bottom-color: black;
+		}
+		.select .option:hover{
+			background: #f00;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<select name="city"  id="">
+			<option value=""></option>
+			<option value="Ha Noi">Hà Nội</option>
+			<option value="Ha Nam">Hà Nam</option>
+			<option value="Hồ Chí Minh">Hồ Chí Minh</option>
+			<option value="Vũng Tàu">Vũng Tàu</option>
+		</select>
+
+		<div class="select-box">
+			<input type="text" id="select" name="city" placeholder="--Chọn một thành phố--" disabled>
+			<div class="select">
+				<div class="option">Thành phố khác</div>
+				<div class="option">Hà Nội</div>
+				<div class="option">Hải phòng</div>
+				<div class="option">Hồ Chí Minh</div>
+				<div class="option">Cần Thơ</div>
+			</div>
+			<span></span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		const select = document.querySelector('#select');
+		const options = document.getElementsByClassName("option");
+
+		for (let i = options.length - 1; i >= 0; i--) {
+			options[i].addEventListener("click",() => {
+				if (i==0) {
+					select.removeAttribute("disabled");
+					select.focus();
+				}else {
+					select.value=options[i].innerHTML;
+					select.setAttribute("disabled",true);
+				}
+			});
+		}
+	</script>
+	<div class="calendars">
+		<iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FHo_Chi_Minh&showNav=1&showTz=0&showTabs=0&showPrint=0&showTitle=0&hl=vi&mode=MONTH&src=Y19zZ2tnOTRycWowOHNwZjNxdWNjcG5mMHEwOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4" style="border:solid 1px #777" width="450" height="300" frameborder="0" scrolling="no"></iframe>
+		<iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FHo_Chi_Minh&showNav=1&showTz=0&showTabs=0&showPrint=0&showTitle=0&hl=vi&mode=MONTH&src=Y19zZ2tnOTRycWowOHNwZjNxdWNjcG5mMHEwOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4" style="border:solid 1px #777" width="450" height="300" frameborder="0" scrolling="no"></iframe>
+	</div>
+	<input type="date" name="">
+</body>
+</html>
