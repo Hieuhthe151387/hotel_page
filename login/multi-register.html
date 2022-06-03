@@ -25,7 +25,7 @@
 				</div>
 				<div class="input-box">
 					<div class="lable">Email<span class="note">*</span></div>
-					<input type="email" name="username" title="Tài khoản chứa từ 4 - 31 ký tự số và ít nhất 1 chữ" 
+					<input type="email" name="email" title="Tài khoản chứa từ 4 - 31 ký tự số và ít nhất 1 chữ" 
 					pattern=".*@gmail\.com" size="30"
 					required>
 				</div>
@@ -98,7 +98,7 @@
 				</div>
 				<div class="input-box url-box hidden">
 					<div class="lable">Nhập link ảnh</div>
-					<input type="url" id="url-avatar">
+					<input type="url" id="url-avatar" name="url-image">
 					<div class="mark">
 						<span class="v">&#10003;</span>
 						<span class="x">&#10006;</span>	
@@ -130,6 +130,7 @@
 
 	vmark.addEventListener('click',()=>{
 		avatar.setAttribute('src',url_avatar.value);
+		step4.innerHTML='&#10003';
 		url_box.classList.toggle('hidden');
 	});
 
@@ -150,6 +151,7 @@
 
 	console.log(form1.classList[1]);
 	function next1(){
+	// change to next step check all required field haved been fill and comfirm pass is correctly with password above.
 		let result = checkinput(form1);
 		if((result!=true)) {
 			alert(result); 
@@ -159,9 +161,11 @@
 			alert('Comfirm password is incorrect!')
 			return false;
 		}
+		// toggle class in box to assign already style in css file
 		form1.classList.toggle('toleft');
 		form2.classList.toggle('toright');
 		form2.classList.toggle('tocenter');
+		step1.innerHTML='&#10003';
 		step1.classList.toggle('instep');
 		step2.classList.toggle('instep');
 		progess.style.width='85px';
@@ -176,6 +180,7 @@
 		form2.classList.toggle('toleft');
 		form3.classList.toggle('toright');
 		form3.classList.toggle('tocenter');
+		step2.innerHTML='&#10003';
 		step2.classList.toggle('instep');
 		step3.classList.toggle('instep');
 		progess.style.width='170px';
@@ -184,6 +189,7 @@
 		form4.classList.toggle('toright');
 		form3.classList.toggle('tocenter');
 		form3.classList.toggle('toleft');
+		step3.innerHTML='&#10003';
 		step3.classList.toggle('instep');
 		step4.classList.toggle('instep');
 		progess.style.width='255px';
@@ -192,6 +198,7 @@
 		form2.classList.toggle('toright');
 		form1.classList.toggle('toleft');
 		form1.classList.toggle('tocenter');
+		step1.innerHTML=1;
 		step2.classList.toggle('instep');
 		step1.classList.toggle('instep');
 		progess.style.width='0';
@@ -200,6 +207,7 @@
 		form3.classList.toggle('toright');
 		form2.classList.toggle('toleft');
 		form2.classList.toggle('tocenter');
+		step2.innerHTML=2;
 		step3.classList.toggle('instep');
 		step2.classList.toggle('instep');
 		progess.style.width='85px';
@@ -208,6 +216,7 @@
 		form4.classList.toggle('toright');
 		form3.classList.toggle('toleft');
 		form3.classList.toggle('tocenter');
+		step3.innerHTML='3';
 		step3.classList.toggle('instep');
 		step4.classList.toggle('instep');
 		progess.style.width='170px';
